@@ -42,6 +42,40 @@ class Posts
         return $data;
     }
 
+    public function getPost($id)
+    {
+        $data = $this->file->read();
+
+        $result = [];
+
+        foreach ($data as $row) {
+            if ($row['id'] == $id) {
+                $result = $row;
+                break;
+            }
+        }
+
+        return $result;
+    }
+
+    public function update(Post $post)
+    {
+        $data = $this->file->read();
+
+        foreach ($data as &$row) {
+            if ($row['id'] == $post->getId()) {
+                $current_date = $this->getCurrentDate();
+                $row['articleTitle'] = $post->getArticleTitle();
+                $row['publishingDate'] = $post->getPublishingDate();
+                $row['content'] = $post->getContent();
+                $row['updatedAt'] = $current_date;
+                break;
+            }
+        }
+
+        $this->file->save($data);
+    }
+
     private function getCurrentDate(): string
     {
         return date('Y-m-d H:i:s', strtotime('now'));
