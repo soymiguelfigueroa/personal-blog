@@ -6,9 +6,9 @@ if (!isset($_SERVER['PHP_AUTH_USER'])) {
     exit;
 } else {
     if ($_SERVER['PHP_AUTH_USER'] == 'admin' && $_SERVER['PHP_AUTH_PW'] == 'admin') {
-        require_once __DIR__ . DIRECTORY_SEPARATOR .  'JsonFile.php';
-        require_once __DIR__ . DIRECTORY_SEPARATOR .  'Post.php';
-        require_once __DIR__ . DIRECTORY_SEPARATOR .  'Posts.php';
+        require_once $_SERVER['DOCUMENT_ROOT'] . DIRECTORY_SEPARATOR . 'personal-blog' . DIRECTORY_SEPARATOR . 'classes' . DIRECTORY_SEPARATOR .  'JsonFile.php';
+        require_once $_SERVER['DOCUMENT_ROOT'] . DIRECTORY_SEPARATOR . 'personal-blog' . DIRECTORY_SEPARATOR . 'classes' . DIRECTORY_SEPARATOR .  'Post.php';
+        require_once $_SERVER['DOCUMENT_ROOT'] . DIRECTORY_SEPARATOR . 'personal-blog' . DIRECTORY_SEPARATOR . 'classes' . DIRECTORY_SEPARATOR .  'Posts.php';
 
         $id = filter_input(INPUT_GET, 'id');
         $file = new JsonFile('/../posts.json');

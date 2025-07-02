@@ -1,8 +1,8 @@
 <?php
 
-require_once __DIR__ . DIRECTORY_SEPARATOR .  'JsonFile.php';
-require_once __DIR__ . DIRECTORY_SEPARATOR .  'Post.php';
-require_once __DIR__ . DIRECTORY_SEPARATOR .  'Posts.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . DIRECTORY_SEPARATOR . 'personal-blog' . DIRECTORY_SEPARATOR . 'classes' . DIRECTORY_SEPARATOR .  'JsonFile.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . DIRECTORY_SEPARATOR . 'personal-blog' . DIRECTORY_SEPARATOR . 'classes' . DIRECTORY_SEPARATOR .  'Post.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . DIRECTORY_SEPARATOR . 'personal-blog' . DIRECTORY_SEPARATOR . 'classes' . DIRECTORY_SEPARATOR .  'Posts.php';
 
 $id = filter_input(INPUT_POST, 'id') ?? null;
 $articleTitle = filter_input(INPUT_POST, 'article-title') ?? null;
