@@ -76,6 +76,20 @@ class Posts
         $this->file->save($data);
     }
 
+    public function delete($id)
+    {
+        $data = $this->file->read();
+
+        foreach ($data as $key => $row) {
+            if ($row['id'] == $id) {
+                unset($data[$key]);
+                break;
+            }
+        }
+
+        $this->file->save($data);
+    }
+
     private function getCurrentDate(): string
     {
         return date('Y-m-d H:i:s', strtotime('now'));

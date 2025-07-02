@@ -32,8 +32,9 @@ if (!isset($_SERVER['PHP_AUTH_USER'])) {
                         <div class="flex justify-between">
                             <span class="text-md font-bold"><?= $article['articleTitle'] ?></span>
                             <div class="flex justify-between gap-4 ">
-                                <a class="hover:underline" href="/personal-blog/admin/edit.php?id=<?= $article['id'] ?>">Edit</a>
+                                <a class="hover:underline" href="/personal-blog/admin/edit.php">Edit</a>
                                 <form action="/personal-blog/admin/delete.php" method="POST">
+                                    <input type="hidden" name="id" value="<?= $article['id'] ?>">
                                     <button type="submit" class="hover:underline cursor-pointer" onclick="return confirm('Do you want to delete this item?')">Delete</button>
                                 </form>
                             </div>
