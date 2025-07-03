@@ -4,7 +4,7 @@ This project is a personal blog to write and publish articles on various topics.
 
 ## Project URL
 
-[Roadmap Personal Blog](https://roadmap.sh/projects/expense-tracker)
+[Roadmap Personal Blog](https://roadmap.sh/projects/personal-blog)
 
 ## Requirements
 
