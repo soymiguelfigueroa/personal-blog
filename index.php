@@ -11,7 +11,7 @@ $articles = $posts->getAll(order: 'desc');
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Blog | Admin</title>
+    <title>Personal Blog</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 <body>
@@ -23,8 +23,8 @@ $articles = $posts->getAll(order: 'desc');
             <?php foreach($articles as $article): ?>
                 <a href="article.php?id=<?= $article['id'] ?>">
                     <div class="flex justify-between">
-                        <span class="text-md font-bold"><?= $article['articleTitle'] ?></span>
-                        <span class="text-md"><?= $article['createdAt'] ?></span>
+                        <span class="text-md font-bold hover:underline"><?= $article['articleTitle'] ?></span>
+                        <span class="text-md hover:underline"><?= $article['createdAt'] ?></span>
                     </div>
                 </a>
             <?php endforeach ?>
